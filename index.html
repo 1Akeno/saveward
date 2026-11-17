@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saveward</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <aside>
+      <div class="search">
+        <input id="search" type="search" placeholder="Find a game" spellcheck="false" />
+        <button id="btn-all" class="all" title="Back up every game that has saves">Back up all</button>
+      </div>
+      <nav class="tabs" id="tabs">
+        <button data-filter="saves" class="on">Has saves <span></span></button>
+        <button data-filter="backed">Backed up <span></span></button>
+        <button data-filter="all">All <span></span></button>
+      </nav>
+      <div id="list" class="scroll"></div>
+      <button id="cloud-line" class="cloud-line"></button>
+      <div class="bar">
+        <button id="btn-add">Add game</button>
+        <button id="btn-scan">Rescan</button>
+        <button id="btn-settings">Settings</button>
+      </div>
+      <div id="status"></div>
+    </aside>
+
+    <main id="detail" class="scroll"></main>
+
+    <dialog id="dlg-add">
+      <form method="dialog">
+        <h3>Add a game</h3>
+        <label>Name <input name="name" required /></label>
+        <label>Save folder
+          <span class="row"><input name="path" required /><button type="button" data-pick="path">Browse</button></span>
+        </label>
+        <label>Game program, optional
+          <span class="row"><input name="exe" /><button type="button" data-pick="exe">Browse</button></span>
+          <small>Lets Saveward back up automatically when you quit the game.</small>
+        </label>
+        <label>Cover image, optional
+          <span class="row"><input name="cover" /><button type="button" data-pick="cover">Browse</button></span>
+        </label>
+        <menu><button value="cancel" formnovalidate>Cancel</button><button value="ok" class="primary">Add game</button></menu>
+      </form>
+    </dialog>
+
+    <dialog id="dlg-cloud" class="wide">
+      <div id="cloud-body"></div>
+    </dialog>
+
+    <dialog id="dlg-settings">
+      <form method="dialog">
+        <h3>Settings</h3>
+        <label>Keep backups in
+          <span class="row"><input name="backup_dir" /><button type="button" data-pick="backup_dir">Browse</button></span>
+        </label>
+        <label>Backups to keep for each game <input name="versions_to_keep" type="number" min="1" max="1000" class="short" /></label>
+        <label class="check"><input name="auto_backup" type="checkbox" /> Back up automatically when I quit a game</label>
+        <label class="check"><input name="show_covers" type="checkbox" /> Show cover art (loaded from Steam)</label>
+        <label class="check"><input name="start_with_windows" type="checkbox" /> Start Saveward when Windows starts</label>
+        <label class="check"><input name="show_popup" type="checkbox" /> Show a pop-up with progress while backing up and uploading</label>
+        <small>Closing this window keeps Saveward running in the tray, next to the clock. To stop it completely, right-click the tray icon and choose Quit.</small>
+        <menu><button value="cancel" formnovalidate>Cancel</button><button value="ok" class="primary">Save settings</button></menu>
+      </form>
+    </dialog>
+  </body>
+</html>

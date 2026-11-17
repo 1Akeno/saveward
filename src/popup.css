@@ -1,0 +1,34 @@
+:root {
+  --sheet: #f7f8f9; --ground: #e6e8eb; --ink: #1a1c20; --pencil: #5d636d; --rule: #d2d6db;
+  --safe: #17664f; --risk: #a8431a;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --sheet: #242529; --ground: #1c1d20; --ink: #e8e9eb; --pencil: #a3a7ae; --rule: #34363b;
+    --safe: #4fb894; --risk: #e07a4f;
+    color-scheme: dark;
+  }
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: var(--sheet); }
+body { font: 13px/1.35 "Archivo Variable", system-ui, sans-serif; color: var(--ink); user-select: none; cursor: default; }
+
+.pop { display: flex; gap: 12px; height: 100%; padding: 12px 12px 12px 12px; border: 1px solid var(--rule); }
+.art { width: 56px; flex: none; border-radius: 3px; overflow: hidden; background: var(--ground); }
+.art:empty { display: none; }
+.art img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.info { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.top { display: flex; align-items: center; gap: 8px; }
+.top b { flex: 1; font-size: 15px; font-weight: 750; font-stretch: 87.5%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#close { background: none; border: 0; color: var(--pencil); font-size: 18px; line-height: 1; padding: 0 2px; cursor: pointer; }
+#close:hover { color: var(--ink); }
+.line { margin-top: 4px; color: var(--pencil); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.meter { margin-top: 8px; height: 6px; border-radius: 3px; background: var(--ground); overflow: hidden; }
+#bar { height: 100%; width: 0; background: var(--safe); transition: width .15s linear; }
+.sub { margin-top: 5px; font-size: 11.5px; color: var(--pencil); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+
+.pop.ok .line { color: var(--safe); font-weight: 600; }
+.pop.bad .line { color: var(--risk); font-weight: 600; }
+.pop.bad #bar { background: var(--risk); }
+.pop.quiet #bar { background: var(--pencil); opacity: .5; }

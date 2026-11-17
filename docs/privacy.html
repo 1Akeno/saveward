@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saveward privacy policy</title>
+<link rel="icon" href="icon.png">
+<style>
+  body { margin: 0; font: 17px/1.6 system-ui, sans-serif; color: #1a1c20; background: #f7f8f9; }
+  main { max-width: 640px; margin: 0 auto; padding: 64px 24px; }
+  h1 { font-size: 34px; margin: 0 0 8px; }
+  h2 { font-size: 19px; margin: 32px 0 6px; }
+  p, li { color: #3d424a; }
+  a { color: #17664f; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy policy</h1>
+  <p>Last updated 17 November 2026. This policy covers the Saveward desktop app for Windows.</p>
+
+  <h2>Summary</h2>
+  <p>Saveward runs on your PC. It has no servers and no accounts of its own, and it doesn't collect analytics. Its developer never receives your files or your data.</p>
+
+  <h2>Data on your PC</h2>
+  <p>Saveward reads your game save files and copies them into backup files on your PC. Settings and backups are stored in your Windows user folder (<code>%APPDATA%\Saveward</code>) and stay there until you delete them.</p>
+
+  <h2>Google Drive</h2>
+  <p>If you choose to connect Google Drive, Saveward asks Google for the <code>drive.file</code> permission. This only lets Saveward create files and read back the files it created, in a folder called Saveward. It can't see, read or change any other file in your Drive.</p>
+  <ul>
+    <li>What's uploaded: your game save backups (zip files), and only to your own Google Drive.</li>
+    <li>Why: so you can restore your saves later or on another PC.</li>
+    <li>Where your sign-in is kept: a sign-in token is stored in Windows Credential Manager on your PC. It isn't sent to the developer or anyone else.</li>
+    <li>Sharing: Saveward doesn't share, sell or transfer your Google data to anyone, and doesn't use it for advertising or to train AI models.</li>
+    <li>Removing access: disconnect in Saveward, or remove Saveward at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Delete the Saveward folder in your Drive to remove the uploaded backups.</li>
+  </ul>
+  <p>Saveward's use of information received from Google APIs follows the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+
+  <h2>Other connections</h2>
+  <ul>
+    <li>Save database: Saveward downloads a public list of game save locations from GitHub about once a week.</li>
+    <li>Cover art (optional, can be turned off): game pictures are loaded from Steam's image servers. That request tells Steam which game's picture is being shown.</li>
+  </ul>
+
+  <h2>Questions</h2>
+  <p>Open an issue on <a href="https://github.com/1Akeno/saveward/issues">GitHub</a>.</p>
+
+  <p><a href="index.html">Back to Saveward</a></p>
+</main>
+</body>
+</html>

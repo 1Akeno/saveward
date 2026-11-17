@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Saveward",
+  "version": "0.1.0",
+  "identifier": "com.saveward.app",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "withGlobalTauri": false,
+    "windows": [
+      {
+        "label": "main",
+        "title": "Saveward",
+        "width": 1100,
+        "height": 700,
+        "minWidth": 760,
+        "minHeight": 480,
+        "visible": false,
+        "create": false
+      }
+    ],
+    "security": {
+      "csp": null,
+      "assetProtocol": {
+        "enable": true,
+        "scope": ["$DATA/Saveward/covers/**"]
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Saveward",
+    "shortDescription": "Backs up your game saves",
+    "longDescription": "Finds your game saves, backs them up when you quit a game, and syncs them to Google Drive, OneDrive or Dropbox.",
+    "category": "Utility",
+    "windows": {
+      "nsis": {
+        "installMode": "currentUser",
+        "installerHooks": "./installer-hooks.nsh"
+      }
+    },
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ]
+  }
+}
